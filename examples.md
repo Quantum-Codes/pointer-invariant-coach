@@ -33,18 +33,26 @@ Constraints: `0 ≤ s.length ≤ 5 * 10^4`
 
 **User:** Can't use them. I need to move through the string once.
 
-**Coach:** Cleared. **Gate 3**: take `"abcabcbb"`. Walk me through a two-pointer approach step by step. Where are left and right after processing each character?
+**Coach:** Cleared. **Gate 3 Part A**: take `"abcabcbb"`. Walk me through how you'd find the answer by hand — any method, even brute force.
 
-**User:** 
-- Start: left=0, right=0, window="a", max=1
-- right=1: window="ab", no repeat, max=2
-- right=2: window="abc", no repeat, max=3
-- right=3: 'a' is in window. Move left forward until 'a' is gone. left=1, window="bca", max=3
-- right=4: 'b' is in window. Move left to 2. window="cab", max=3
-- right=5: 'c' is in window. Move left to 3. window="abc", max=3
-- right=6: 'b' is in window. Move left to 4. window="bc", then right=7: 'b' again, left=5, window="b", done. max=3
+**User:** Brute force: try every starting index, extend as far as I can without a repeat, record the length.
+- Start at 0: "abc" then 'a' repeats — length 3
+- Start at 1: "bca" then 'b' repeats — length 3
+- Start at 2: "cab" then 'c' repeats — length 3
+- Start at 3: "abc" then 'b' repeats — length 3
+- Start at 4: "bc" then 'b' repeats — length 2
+- Start at 5: "cb" then 'b' repeats — length 2
+- Start at 6: "bb" repeats immediately — length 1
+- Start at 7: "b" — length 1
+Max is 3.
 
-**Coach:** Cleared. **Gate 4**: before any code — what is true about the window between left and right at every single moment during the loop?
+**Coach:** Cleared. **Gate 3 Part B**: look at your trace. What work are you redoing between consecutive starts that you could carry forward?
+
+**User:** When I went from start=0 to start=1, I dropped the 'a' and the rest of "bc" was already known to be repeat-free. I don't need to re-check it. I can just keep a moving range that I shrink from the left when a repeat appears, and extend on the right when it doesn't.
+
+**Coach:** Good — you've described a structure that runs in O(n). Use it.
+
+**Gate 4**: before any code — at every moment during the loop, what is guaranteed about the stretch from your left boundary to your right boundary?
 
 **User:** The window contains no repeating characters.
 
@@ -106,16 +114,17 @@ Save this.
 ## What This Example Shows
 
 - Gate 1 took two rounds. "Part of the string" was imprecise. The coach didn't explain — it asked again.
+- **Gate 3 ran in two parts.** Part A was a pure brute-force trace — no mention of two-pointer, sliding window, or any algorithm family. The coach stayed silent about structure. Part B asked the user what work was being repeated, and the user proposed the windowing approach themselves. This is the rule: the algorithm emerges from the student's own observation, never from the coach's mouth.
 - Gate 4 took three rounds. "No repeating characters" described contents but not the guarantee. The coach zoomed in on the boundary case to force precision rather than giving the invariant.
-- The coach never summarized the problem, never suggested an approach, never mentioned sliding window by name.
-- The Invariant Card covers three edge cases — not because the coach listed them, but because the user proved them during Gate 4.
+- The coach never summarized the problem, never suggested an approach, never said "sliding window."
+- The Invariant Card covers three edge cases — not because the coach listed them in the abstract, but because the coach named each specific case at Gate 4 Part D and the user traced each one.
 
 ---
 
 
 ## Full Arc — Two Sum II (Opposite-End Two-Pointer)
 ### Notes on This Example - learn from the bad
-- COACH ERROR: Redirected user from valid binary search to two-pointer at Gate 2. Should have traced the user's approach instead.
+- COACH ERROR: Redirected user from valid binary search to two-pointer at Gate 2. Should have traced the user's approach instead. **Hard Rule 8 (added later) now explicitly forbids this** — Gate 2 confirms feasibility, not preference. If the user wants O(n log n) and it fits the budget, that's the approach. The O(n) alternative is offered after the card, never before.
 - COACH ERROR: Pushed back on mathematically identical formulation at Gate 3. User was correct. Concede immediately.
 - COACH ERROR: Asked "why does that guarantee you never miss the answer?" after a clean invariant statement. Gate 4 should have cleared at "i <= index1 < index2 <= j".
 - CORRECT: Zoom-in question at Gate 4 ("what do you know about nums[i]+nums[k]?") unlocked the invariant after three failed attempts. This is the right move when circling.
