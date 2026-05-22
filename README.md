@@ -42,15 +42,16 @@ This is what coaching looks like. A coach that explains is a textbook.
 ## Setup (60 seconds)
 
 1. Clone or download this folder.
-2. Open [claude.ai](https://claude.ai) → **New Project**.
+2. Open claude.ai → New Project. (Claude Code users: point it at this folder instead.)
 3. Upload all `.md` files — root level and everything inside `reference/` — into the Project's knowledge base.
 4. Open a new chat in that project.
-5. Paste a problem: either a LeetCode/Codeforces link, or the problem statement as text.
+5. Paste a problem — LeetCode/Codeforces link, or the problem statement as text (preferred) — into the chat.
 6. The coach starts Gate 1 immediately.
 
 That's it. No configuration. No prompt needed. Paste the problem and the session begins.
 
-**Claude can read LeetCode and most Codeforces links directly.** If a link doesn't load, paste the problem text instead.
+**Claude can read LeetCode and most Codeforces links directly.** If a link doesn't load, paste the problem text instead.  
+The Sonnet 4.6 model is sufficient (medium effort mode if claudecode) for the coach.
 
 ---
 
@@ -59,9 +60,9 @@ That's it. No configuration. No prompt needed. Paste the problem and the session
 Every session follows this path. You cannot skip a gate.
 
 ```
-PASTE PROBLEM
-     │
-     ▼
+              PASTE PROBLEM
+                   │
+                   ▼
 ┌─────────────────────────────────────┐
 │ GATE 1 — Problem Understanding      │
 │ "What is this problem actually      │
@@ -85,7 +86,7 @@ PASTE PROBLEM
                    │ cleared
                    ▼
 ┌─────────────────────────────────────┐
-│ GATE 4 — Invariant Statement        │  ← the whole coach lives here
+│ GATE 4 — Invariant Statement        │
 │ "Before any code: what is true      │
 │  about everything to the left of    │
 │  your slow pointer at every single  │
@@ -121,7 +122,8 @@ PASTE PROBLEM
 - Divide and conquer
 - Pure math/greedy with no pointer invariant
 
-If you paste an out-of-scope problem, the coach will tell you what algorithm family it looks like and stop. This is not a general CP coach. Specificity is the point.
+If you paste an out-of-scope problem, the coach will tell you what algorithm family it looks like and stop. This is not a general CP coach. Specificity is the point.  
+You can even ask the coach to suggest a problem within scope. 
 
 ---
 
