@@ -33,7 +33,10 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero-wrap" id="hero">
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="hero">
     <div class="eyebrow">// for competitive programmers</div>
     <h1 class="hero-title">
       Stop debugging code.<br>
@@ -59,6 +62,7 @@
       </a>
       <button class="btn btn-primary btn-halo" id="play-demo-btn">▶&nbsp; Play Demo</button>
     </div>
+    </div><!-- /.hero -->
   </section>
 
   <!-- THE FIVE GATES -->
@@ -68,52 +72,107 @@
       <h2 class="section-title">Five questions. In order.<br><em>You cannot skip a gate.</em></h2>
       <p class="section-lead">Gates unlock by demonstration, not by explanation. Not by asking nicely. A user who jumps to Gate 4 without clearing Gate 2 gets brought back to Gate 2.</p>
 
-      <div class="gates-list">
+      <div class="gates-grid">
 
-        <div class="gate-row">
-          <div class="gate-num">1</div>
-          <div class="gate-body">
-            <div class="gate-name">Problem Understanding</div>
+        <!-- Gate 1 -->
+        <details class="gate-card">
+          <summary class="gate-summary">
+            <div class="gate-num">1</div>
+            <div class="gate-summary-body">
+              <div class="gate-summary-name">Problem Understanding</div>
+              <div class="gate-summary-teaser">What is this problem actually asking?</div>
+            </div>
+            <span class="gate-chevron">›</span>
+          </summary>
+          <div class="gate-body-inner">
             <div class="gate-q">"Explain what this problem is actually asking in one sentence. No jargon. No restating the description. What does it want you to produce?"</div>
             <div class="gate-clears">Clears when the sentence would let a stranger solve the problem without reading the original statement.</div>
+            <div class="gate-example">
+              <div class="gate-ex fail">✗ "Find the longest subarray using two pointers."</div>
+              <div class="gate-ex pass">✓ "Return the length of the longest subarray with at most k zeros."</div>
+            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="gate-row">
-          <div class="gate-num">2</div>
-          <div class="gate-body">
-            <div class="gate-name">Constraints</div>
+        <!-- Gate 2 -->
+        <details class="gate-card">
+          <summary class="gate-summary">
+            <div class="gate-num">2</div>
+            <div class="gate-summary-body">
+              <div class="gate-summary-name">Constraints</div>
+              <div class="gate-summary-teaser">What complexity can you afford?</div>
+            </div>
+            <span class="gate-chevron">›</span>
+          </summary>
+          <div class="gate-body-inner">
             <div class="gate-q">"What is the input size? What does that tell you about the complexity you can afford?"</div>
             <div class="gate-clears">Clears when you correctly identify the complexity budget and what it rules out. The coach never pushes for a faster solution — that conversation happens after the card, not before.</div>
+            <div class="gate-example">
+              <div class="gate-ex fail">✗ "n = 10^5 so we need to be efficient."</div>
+              <div class="gate-ex pass">✓ "n ≤ 10^5 means O(n²) — 10^10 ops — would TLE. O(n log n) or better is the budget."</div>
+            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="gate-row">
-          <div class="gate-num">3</div>
-          <div class="gate-body">
-            <div class="gate-name">Manual Trace</div>
+        <!-- Gate 3 -->
+        <details class="gate-card">
+          <summary class="gate-summary">
+            <div class="gate-num">3</div>
+            <div class="gate-summary-body">
+              <div class="gate-summary-name">Manual Trace</div>
+              <div class="gate-summary-teaser">Walk through the example. Show every step.</div>
+            </div>
+            <span class="gate-chevron">›</span>
+          </summary>
+          <div class="gate-body-inner">
             <div class="gate-q">"Walk through the first example by hand — any method, even brute force. Then: what work are you repeating that you could carry forward from the previous step?"</div>
             <div class="gate-clears">Two parts. The smarter algorithm must emerge from your own trace. The coach never names it — not "two-pointer", not "sliding window". Structure surfaces itself, or you stay in Gate 3.</div>
+            <div class="gate-example">
+              <div class="gate-ex fail">✗ "I'd use a sliding window where left moves when the window is invalid."</div>
+              <div class="gate-ex pass">✓ "[0,4] → length 5 with 2 flips. Then I realized I missed the window that flips on both sides."</div>
+            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="gate-row">
-          <div class="gate-num">4</div>
-          <div class="gate-body">
-            <div class="gate-name">Invariant + Liveness + Bounds + Edge Cases</div>
+        <!-- Gate 4 -->
+        <details class="gate-card">
+          <summary class="gate-summary">
+            <div class="gate-num">4</div>
+            <div class="gate-summary-body">
+              <div class="gate-summary-name">Invariant + Liveness + Bounds + Edge Cases</div>
+              <div class="gate-summary-teaser">What is always true about [left, right]?</div>
+            </div>
+            <span class="gate-chevron">›</span>
+          </summary>
+          <div class="gate-body-inner">
             <div class="gate-q">"Before any code: what is guaranteed about everything to the left of your slow pointer at every single moment during the loop — start, each step, and end?"</div>
             <div class="gate-clears">Four parts, all four must clear: the safety invariant, why the loop terminates, why your exact loop bound is correct and not ±1, and every named edge case traced on a specific input. Only then: <span class="mono" style="color:var(--accent)">"Write the code. Paste it here when you're done."</span></div>
+            <div class="gate-example">
+              <div class="gate-ex fail">✗ "The window is valid when we update max." (only true sometimes)</div>
+              <div class="gate-ex pass">✓ "Zeros in [left, right] ≤ k — not just when max updates. At every single step."</div>
+            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="gate-row">
-          <div class="gate-num">5</div>
-          <div class="gate-body">
-            <div class="gate-name">Verification — triggered by a bug</div>
+        <!-- Gate 5 — full width -->
+        <details class="gate-card gate-card-full">
+          <summary class="gate-summary">
+            <div class="gate-num">5</div>
+            <div class="gate-summary-body">
+              <div class="gate-summary-name">Verification — triggered by a bug</div>
+              <div class="gate-summary-teaser">Where does your invariant first break?</div>
+            </div>
+            <span class="gate-chevron">›</span>
+          </summary>
+          <div class="gate-body-inner">
             <div class="gate-q">"Set the code aside. Tell me: at which step does your invariant first break?"</div>
-            <div class="gate-clears">Coach reads the code once, silently, and classifies the bug: structural (rewrite the loop), typing (pointed out directly, no Socratic dance), or thinking (never debug the code — always ask about the invariant). Each class is handled differently.</div>
+            <div class="gate-clears">Coach reads the code once, silently, and classifies the bug: <strong>structural</strong> (rewrite the loop), <strong>typing</strong> (pointed out directly — no Socratic dance for a typo), or <strong>thinking</strong> (never debug the code — always ask about the invariant). Each class handled differently.</div>
+            <div class="gate-example">
+              <div class="gate-ex fail">✗ "It's wrong at line 12 because I forgot to increment left."</div>
+              <div class="gate-ex pass">✓ "Step 3: right=4, left=0, zeros=k+1. The invariant breaks here — window is over budget."</div>
+            </div>
           </div>
-        </div>
+        </details>
 
       </div>
     </div>
