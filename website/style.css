@@ -93,7 +93,7 @@ body  {
 .hero {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 88px 32px 72px;
+  padding: 40px 32px 72px;
   text-align: center;
 }
 
@@ -794,6 +794,35 @@ body  {
 
 /* ── Scroll offset for sticky nav ──────────────────────── */
 #gates, #card, #scope, #setup { scroll-margin-top: 72px; }
+
+/* ── Halo glow button ──────────────────────────────────── */
+@keyframes halo-pulse {
+  0%, 100% { box-shadow: 0 0 10px 2px rgba(88,166,255,0.30), 0 4px 16px rgba(88,166,255,0.18); }
+  50%       { box-shadow: 0 0 22px 7px rgba(88,166,255,0.52), 0 4px 28px rgba(88,166,255,0.36); }
+}
+.btn-halo { animation: halo-pulse 2.6s ease-in-out infinite; }
+.btn-nav  { padding: 6px 14px; font-size: 12px; margin-left: 8px; }
+
+/* ── Syntax highlight colors ───────────────────────────── */
+.hl-kw      { color: #79b8ff; }
+.hl-type    { color: #e3b341; }
+.hl-num     { color: #b5cea8; }
+.hl-comment { color: #5f656d; font-style: italic; }
+
+/* ── Code lines in right panel ─────────────────────────── */
+.code-line { display: block; }
+.code-line.bug {
+  background: rgba(227,179,65,0.17);
+  border-left: 2px solid #e3b341;
+  margin-left: -14px;
+  padding-left: 12px;
+}
+.code-line.good {
+  background: var(--green-bg);
+  border-left: 2px solid var(--green);
+  margin-left: -14px;
+  padding-left: 12px;
+}
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 700px) {
