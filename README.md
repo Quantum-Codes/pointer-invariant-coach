@@ -128,6 +128,7 @@ If you paste an out-of-scope problem, the coach will tell you what algorithm fam
 ## Who This Is For
 
 Competitive programmers who:
+- Know implementation but aren't able to think algorithmically about pointer problems
 - Write two-pointer solutions based on pattern recognition rather than proof
 - Get off-by-one errors on edge cases they can't explain
 - Pass 90% of test cases and fail on empty arrays or single elements
