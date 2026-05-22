@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointer Invariant Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-brand"><span class="mono accent">pointer-invariant-coach</span></span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">// for competitive programmers</div>
+    <h1 class="hero-title">
+      Stop debugging code.<br>
+      Debug <em>thinking</em> instead.
+    </h1>
+    <p class="hero-sub">
+      You write two-pointer and sliding window solutions by feel.
+      You get bitten by bugs you can't explain.
+      This coach makes you prove the invariant before you write a single line.
+    </p>
+    <div class="cta-row">
+      <a href="https://github.com/PLACEHOLDER" target="_blank" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        View on GitHub
+      </a>
+      <button class="btn btn-primary" id="play-demo-btn">▶&nbsp; Play Demo</button>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars-section">
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-tag">Gates 1–4</div>
+        <div class="pillar-text">Prove the invariant before writing a line</div>
+      </div>
+      <div class="pillar-sep"></div>
+      <div class="pillar">
+        <div class="pillar-tag">Gate 5</div>
+        <div class="pillar-text">Bug? Coach asks where the invariant breaks — not what's wrong with the code</div>
+      </div>
+      <div class="pillar-sep"></div>
+      <div class="pillar">
+        <div class="pillar-tag">Every session</div>
+        <div class="pillar-text">Walk away with an Invariant Card — a record of what you proved, not what you memorized</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Drop it in. Start immediately.</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <span>Clone or download this folder</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span>Open <strong>claude.ai → New Project</strong></span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span>Upload all <code>.md</code> files into the project knowledge base</span>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <span>Paste any LeetCode or Codeforces problem as text</span>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <span>Gate 1 fires immediately. No configuration needed.</span>
+        </li>
+      </ol>
+      <p class="setup-note">Works with Claude Projects on claude.ai, or drop the folder into Claude Code. Sonnet 4.5 / 4.6 is sufficient — no need for Opus.</p>
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">What this coaches</h2>
+      <div class="scope-grid">
+        <div class="scope-box in">
+          <div class="scope-label in">✓ in scope</div>
+          <ul>
+            <li>Fast / slow pointer</li>
+            <li>Opposite-end two-pointer</li>
+            <li>Sliding window — fixed size</li>
+            <li>Sliding window — variable size</li>
+            <li>Partition pointer</li>
+          </ul>
+        </div>
+        <div class="scope-box out">
+          <div class="scope-label out">— out of scope</div>
+          <ul>
+            <li>Dynamic programming</li>
+            <li>Graph algorithms</li>
+            <li>Tree traversals</li>
+            <li>Pure greedy / math</li>
+          </ul>
+        </div>
+      </div>
+      <p class="scope-note">If your problem doesn't have a pointer moving through an array while maintaining a condition — the coach will say so and stop. Specificity is the point.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="mono muted">// drop the folder into a Claude Project. that's it.</span>
+  </footer>
+
+  <!-- ─── DEMO MODAL ─── -->
+  <div class="overlay hidden" id="demo-overlay">
+    <div class="modal">
+
+      <div class="modal-header">
+        <span class="mono muted" style="font-size:12px;">session — lc1004.md</span>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="mono muted" style="font-size:12px;" id="slide-counter">1 / 11</span>
+          <button class="close-btn" id="close-demo" aria-label="Close">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body" id="modal-body">
+        <div class="slide-label mono" id="slide-label"></div>
+        <div class="exchanges" id="exchanges"></div>
+      </div>
+
+      <div class="narrator-bar">
+        <span class="mono" style="font-size:11px;color:var(--faint);display:block;margin-bottom:6px;">// narrator</span>
+        <p class="narrator-text" id="narrator-text"></p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="nav-btn mono" id="prev-btn" disabled>← prev</button>
+        <div class="dots" id="dots"></div>
+        <button class="nav-btn mono" id="next-btn">next →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
