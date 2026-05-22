@@ -13,23 +13,44 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <span class="nav-brand"><span class="mono accent">pointer-invariant-coach</span></span>
+    <a href="#hero" class="nav-brand">
+      <span class="mono accent nav-brand-arrow">▸</span>
+      <span class="nav-brand-name">Pointer Invariant Coach</span>
+    </a>
+    <div class="nav-links">
+      <a href="#gates"  class="nav-link">Gates</a>
+      <a href="#card"   class="nav-link">The Card</a>
+      <a href="#scope"  class="nav-link">Scope</a>
+      <a href="#setup"  class="nav-link">Setup</a>
+      <a href="https://github.com/Quantum-Codes/pointer-invariant-coach" target="_blank" class="nav-link nav-link-gh">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="eyebrow">// for competitive programmers</div>
     <h1 class="hero-title">
       Stop debugging code.<br>
       Debug <em>thinking</em> instead.
     </h1>
     <p class="hero-sub">
-      You write two-pointer and sliding window solutions by feel.
-      You get bitten by bugs you can't explain.
-      This coach makes you prove the invariant before you write a single line.
+      You've written <code class="icode">while (left &lt; right)</code> and couldn't state what that condition
+      actually preserves. You pass 90% of test cases and fail on the empty array or single element you can't explain.
+      The bug isn't in the code — it's in the invariant you never stated.
     </p>
+    <p class="hero-sub">
+      This coach doesn't explain. It doesn't give hints. It asks five questions — in order — and refuses to advance
+      until you prove each answer yourself. When your code has a bug, it doesn't read the code.
+      It asks you where your invariant breaks.
+    </p>
+    <p class="hero-rule">A coach that explains is a textbook.</p>
     <div class="cta-row">
-      <a href="https://github.com/PLACEHOLDER" target="_blank" class="btn btn-ghost">
+      <a href="https://github.com/Quantum-Codes/pointer-invariant-coach" target="_blank" class="btn btn-ghost">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
         </svg>
@@ -39,29 +60,123 @@
     </div>
   </section>
 
-  <!-- PILLARS -->
-  <section class="pillars-section">
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-tag">Gates 1–4</div>
-        <div class="pillar-text">Prove the invariant before writing a line</div>
-      </div>
-      <div class="pillar-sep"></div>
-      <div class="pillar">
-        <div class="pillar-tag">Gate 5</div>
-        <div class="pillar-text">Bug? Coach asks where the invariant breaks — not what's wrong with the code</div>
-      </div>
-      <div class="pillar-sep"></div>
-      <div class="pillar">
-        <div class="pillar-tag">Every session</div>
-        <div class="pillar-text">Walk away with an Invariant Card — a record of what you proved, not what you memorized</div>
+  <!-- THE FIVE GATES -->
+  <section class="section" id="gates">
+    <div class="section-inner">
+      <div class="section-tag">01 / GATES</div>
+      <h2 class="section-title">Five questions. In order.<br><em>You cannot skip a gate.</em></h2>
+      <p class="section-lead">Gates unlock by demonstration, not by explanation. Not by asking nicely. A user who jumps to Gate 4 without clearing Gate 2 gets brought back to Gate 2.</p>
+
+      <div class="gates-list">
+
+        <div class="gate-row">
+          <div class="gate-num">1</div>
+          <div class="gate-body">
+            <div class="gate-name">Problem Understanding</div>
+            <div class="gate-q">"Explain what this problem is actually asking in one sentence. No jargon. No restating the description. What does it want you to produce?"</div>
+            <div class="gate-clears">Clears when the sentence would let a stranger solve the problem without reading the original statement.</div>
+          </div>
+        </div>
+
+        <div class="gate-row">
+          <div class="gate-num">2</div>
+          <div class="gate-body">
+            <div class="gate-name">Constraints</div>
+            <div class="gate-q">"What is the input size? What does that tell you about the complexity you can afford?"</div>
+            <div class="gate-clears">Clears when you correctly identify the complexity budget and what it rules out. The coach never pushes for a faster solution — that conversation happens after the card, not before.</div>
+          </div>
+        </div>
+
+        <div class="gate-row">
+          <div class="gate-num">3</div>
+          <div class="gate-body">
+            <div class="gate-name">Manual Trace</div>
+            <div class="gate-q">"Walk through the first example by hand — any method, even brute force. Then: what work are you repeating that you could carry forward from the previous step?"</div>
+            <div class="gate-clears">Two parts. The smarter algorithm must emerge from your own trace. The coach never names it — not "two-pointer", not "sliding window". Structure surfaces itself, or you stay in Gate 3.</div>
+          </div>
+        </div>
+
+        <div class="gate-row">
+          <div class="gate-num">4</div>
+          <div class="gate-body">
+            <div class="gate-name">Invariant + Liveness + Bounds + Edge Cases</div>
+            <div class="gate-q">"Before any code: what is guaranteed about everything to the left of your slow pointer at every single moment during the loop — start, each step, and end?"</div>
+            <div class="gate-clears">Four parts, all four must clear: the safety invariant, why the loop terminates, why your exact loop bound is correct and not ±1, and every named edge case traced on a specific input. Only then: <span class="mono" style="color:var(--accent)">"Write the code. Paste it here when you're done."</span></div>
+          </div>
+        </div>
+
+        <div class="gate-row">
+          <div class="gate-num">5</div>
+          <div class="gate-body">
+            <div class="gate-name">Verification — triggered by a bug</div>
+            <div class="gate-q">"Set the code aside. Tell me: at which step does your invariant first break?"</div>
+            <div class="gate-clears">Coach reads the code once, silently, and classifies the bug: structural (rewrite the loop), typing (pointed out directly, no Socratic dance), or thinking (never debug the code — always ask about the invariant). Each class is handled differently.</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SETUP -->
-  <section class="section">
+  <!-- THE INVARIANT CARD -->
+  <section class="section" id="card">
     <div class="section-inner">
+      <div class="section-tag">02 / THE CARD</div>
+      <h2 class="section-title">You don't get this by asking for it.<br><em>You get it by proving the invariant yourself.</em></h2>
+      <p class="section-lead">Every session that reaches a correct solution ends with this card. Save every card. Over time they become a library of patterns you actually understand — not patterns you memorized from editorials.</p>
+
+      <pre class="card-block">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INVARIANT CARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROBLEM      : Longest Substring Without Repeating Characters (LeetCode #3)
+TYPE         : sliding-window-variable
+
+SLOW POINTER : left — all characters in [left, right] are unique at every moment
+FAST POINTER : right — scanner; advances one step per iteration regardless
+TERMINATION  : right == s.size(); maxLen holds the longest valid window seen
+
+EDGE CASE    : empty string → returns 0 ✓  single char → returns 1 ✓  all same → max stays 1 ✓
+
+EARNED       : 2026-05-21
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</pre>
+    </div>
+  </section>
+
+  <!-- SCOPE -->
+  <section class="section" id="scope">
+    <div class="section-inner">
+      <div class="section-tag">03 / SCOPE</div>
+      <h2 class="section-title">What this coaches</h2>
+      <div class="scope-grid">
+        <div class="scope-box in">
+          <div class="scope-label in">✓ in scope</div>
+          <ul>
+            <li>Fast / slow pointer <span class="scope-eg">Remove Element, Move Zeroes</span></li>
+            <li>Opposite-end two-pointer <span class="scope-eg">Two Sum sorted, Container With Most Water</span></li>
+            <li>Sliding window — fixed size <span class="scope-eg">Max Average Subarray, Find All Anagrams</span></li>
+            <li>Sliding window — variable size <span class="scope-eg">Longest Substring, Min Window Substring</span></li>
+            <li>Partition pointer <span class="scope-eg">Sort Colors, Segregate by parity</span></li>
+          </ul>
+        </div>
+        <div class="scope-box out">
+          <div class="scope-label out">— out of scope</div>
+          <ul>
+            <li>Dynamic programming</li>
+            <li>Graph algorithms (BFS, DFS, shortest path)</li>
+            <li>Tree traversals</li>
+            <li>Divide and conquer</li>
+            <li>Pure greedy / math — no pointer invariant</li>
+          </ul>
+        </div>
+      </div>
+      <p class="scope-note">If you paste an out-of-scope problem, the coach names what algorithm family it looks like and stops. This is not a general CP coach. Specificity is the point.</p>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="section" id="setup">
+    <div class="section-inner">
+      <div class="section-tag">04 / SETUP</div>
       <h2 class="section-title">Drop it in. Start immediately.</h2>
       <ol class="steps">
         <li>
@@ -74,7 +189,7 @@
         </li>
         <li>
           <span class="step-num">3</span>
-          <span>Upload all <code>.md</code> files into the project knowledge base</span>
+          <span>Upload all <code>.md</code> files — root level and everything inside <code>reference/</code> — into the project knowledge base</span>
         </li>
         <li>
           <span class="step-num">4</span>
@@ -85,42 +200,13 @@
           <span>Gate 1 fires immediately. No configuration needed.</span>
         </li>
       </ol>
-      <p class="setup-note">Works with Claude Projects on claude.ai, or drop the folder into Claude Code. Sonnet 4.5 / 4.6 is sufficient — no need for Opus.</p>
-    </div>
-  </section>
-
-  <!-- SCOPE -->
-  <section class="section">
-    <div class="section-inner">
-      <h2 class="section-title">What this coaches</h2>
-      <div class="scope-grid">
-        <div class="scope-box in">
-          <div class="scope-label in">✓ in scope</div>
-          <ul>
-            <li>Fast / slow pointer</li>
-            <li>Opposite-end two-pointer</li>
-            <li>Sliding window — fixed size</li>
-            <li>Sliding window — variable size</li>
-            <li>Partition pointer</li>
-          </ul>
-        </div>
-        <div class="scope-box out">
-          <div class="scope-label out">— out of scope</div>
-          <ul>
-            <li>Dynamic programming</li>
-            <li>Graph algorithms</li>
-            <li>Tree traversals</li>
-            <li>Pure greedy / math</li>
-          </ul>
-        </div>
-      </div>
-      <p class="scope-note">If your problem doesn't have a pointer moving through an array while maintaining a condition — the coach will say so and stop. Specificity is the point.</p>
+      <p class="setup-note">Claude Code users: point it at this folder instead. Sonnet 4.6 is sufficient. No Opus needed.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span class="mono muted">// drop the folder into a Claude Project. that's it.</span>
+    <span class="mono muted">// paste the problem. gate 1 starts immediately.</span>
   </footer>
 
   <!-- ─── DEMO MODAL ─── -->
@@ -130,27 +216,75 @@
       <div class="modal-header">
         <span class="mono muted" style="font-size:12px;">session — lc1004.md</span>
         <div style="display:flex;align-items:center;gap:16px;">
-          <span class="mono muted" style="font-size:12px;" id="slide-counter">1 / 11</span>
+          <span class="mono muted" style="font-size:12px;" id="slide-counter">1 / 10</span>
           <button class="close-btn" id="close-demo" aria-label="Close">✕</button>
         </div>
       </div>
 
-      <div class="modal-body" id="modal-body">
-        <div class="slide-label mono" id="slide-label"></div>
-        <div class="exchanges" id="exchanges"></div>
-      </div>
+      <div class="modal-cols">
 
-      <div class="narrator-bar">
-        <span class="mono" style="font-size:11px;color:var(--faint);display:block;margin-bottom:6px;">// narrator</span>
-        <p class="narrator-text" id="narrator-text"></p>
-      </div>
+        <!-- LEFT: Problem statement -->
+        <div class="col col-problem">
+          <div class="col-hdr mono">// problem statement</div>
+          <div class="problem-scroll">
+            <div class="problem-title">Max Consecutive Ones III</div>
+            <div class="problem-meta mono">LeetCode #1004 · Medium</div>
+            <p class="problem-desc">Given a binary array <code>nums</code> and an integer <code>k</code>, return the maximum number of consecutive 1's in the array if you can flip at most <code>k</code> 0's.</p>
+            <div class="prob-section">
+              <div class="prob-sec-hdr">Example 1</div>
+              <pre class="prob-pre">nums = [1,1,1,0,0,0,1,1,1,1,0]
+k    = 2
+→    6</pre>
+            </div>
+            <div class="prob-section">
+              <div class="prob-sec-hdr">Example 2</div>
+              <pre class="prob-pre">nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1,0]
+k    = 3
+→    10</pre>
+            </div>
+            <div class="prob-section">
+              <div class="prob-sec-hdr">Constraints</div>
+              <ul class="prob-constraints">
+                <li>1 ≤ nums.length ≤ 10<sup>5</sup></li>
+                <li>nums[i] is 0 or 1</li>
+                <li>0 ≤ k ≤ nums.length</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-      <div class="modal-footer">
-        <button class="nav-btn mono" id="prev-btn" disabled>← prev</button>
-        <div class="dots" id="dots"></div>
-        <button class="nav-btn mono" id="next-btn">next →</button>
-      </div>
+        <!-- MIDDLE: Slideshow -->
+        <div class="col col-middle">
+          <div class="col-hdr">
+            <span class="mono" id="slide-label" style="color:var(--faint);font-size:11px;"></span>
+          </div>
+          <div class="exchanges-wrap" id="exchanges-wrap">
+            <div class="exchanges" id="exchanges"></div>
+          </div>
+          <div class="narrator-bar">
+            <span class="mono" style="font-size:11px;color:var(--faint);display:block;margin-bottom:4px;">// narrator</span>
+            <p class="narrator-text" id="narrator-text"></p>
+          </div>
+          <div class="modal-footer">
+            <button class="nav-btn mono" id="prev-btn" disabled>← prev</button>
+            <div class="dots" id="dots"></div>
+            <button class="nav-btn mono" id="next-btn">next →</button>
+          </div>
+        </div>
 
+        <!-- RIGHT: Algorithm viz + Code -->
+        <div class="col col-right">
+          <div class="approach-badge" id="approach-badge">◌  TRACING...</div>
+          <div class="viz-panel" id="viz-panel"></div>
+          <div class="code-panel">
+            <div class="col-hdr mono">// code</div>
+            <div class="code-scroll">
+              <pre id="code-content" class="code-placeholder">// code appears after Gate 4 clears</pre>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end modal-cols -->
     </div>
   </div>
 
