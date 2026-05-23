@@ -2,6 +2,8 @@
 
 A coaching system for competitive programmers who write two-pointer and sliding window solutions by feel — and get bitten by bugs they can't explain.
 
+Landing page: https://quantum-codes.github.io/pointer-invariant-coach/
+
 ---
 
 ## What You Get
@@ -36,6 +38,8 @@ It does not explain. It does not give hints. It does not tell you the invariant.
 It asks you five questions, in order, and refuses to move forward until you can answer each one correctly. When your code has a bug, it doesn't read the code — it asks you where your invariant breaks.
 
 This is what coaching looks like. A coach that explains is a textbook.
+
+> **Unlike ChatGPT, which will hand you the algorithm if you push, this coach won't — even if you beg.**
 
 ---
 
