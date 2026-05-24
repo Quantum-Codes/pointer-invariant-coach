@@ -141,14 +141,4 @@ Competitive programmers who:
 
 If you've ever written `while (left < right)` and not been able to state exactly what that condition preserves — this coach is for you.
 
----
 
-## Files
-
-| File | Job |
-|---|---|
-| `identity.md` | Who the coach is, what it handles, what it doesn't |
-| `rules.md` | The five gates, the hard rules, the Invariant Card format |
-| `examples.md` | One complete coaching arc — read this first |
-| `reference/pointer-patterns.md` | Five canonical patterns with invariant templates and diagnostic questions |
-| `README.md` | This file |
